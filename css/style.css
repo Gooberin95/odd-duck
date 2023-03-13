@@ -13,7 +13,7 @@
   
   .pic2 { grid-area: pic2; }
   
-  .pic3 { grid-area: pic3; }
+  .pic3 { grid-area: pic3; ;}
   
   .welcome { grid-area: welcome; }
   
@@ -28,7 +28,7 @@
   /* For presentation only, no need to copy the code below */
   
   .container * {
-    border: 1px solid red;
+    border: 1px solid black;
     position: relative;
   }
   
