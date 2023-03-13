@@ -1,21 +1,26 @@
 .container {
   display: grid;
-  grid-template-columns: 150px 150px;
+  
 
 }
 
 .container2 {
+  display:grid;
+  
 }
 
 .container-item {
   border: 10px solid grey;
   text-align: center;
   padding: 25px;
+  width:50%;
+  
 }
 
 #nav1 {
   color: white;
   background-color: greenyellow;
+  
 }
 
 #nav2 {
