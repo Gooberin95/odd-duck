@@ -5,7 +5,12 @@
 
 }
 
+.container2 {
+  display: grid;
+  height: 600px;
+  grid-template-columns: 600px 600px 700px;
 
+}
 
 
 .container-item {
