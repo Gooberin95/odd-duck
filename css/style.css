@@ -12,6 +12,17 @@
 
 }
 
+.container3 {
+  display: grid;
+  height: 100px;
+  
+  border:10px solid black;
+
+  grid-template-columns: 100%;
+
+}
+
+
 
 .container-item {
   border: 10px solid grey;
