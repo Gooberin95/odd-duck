@@ -10,6 +10,13 @@
   
 }
 
+#but {
+  padding:25px;
+  border: 25px solid red;
+  text-align: center;
+  border-radius: 15px;
+}
+
 .container-item {
   border: 10px solid grey;
   text-align: center;
@@ -21,6 +28,8 @@
 #nav1 {
   color: white;
   background-color: greenyellow;
+  height: 150px;
+
   
 }
 
