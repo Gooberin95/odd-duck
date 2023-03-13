@@ -6,6 +6,7 @@
 
 .container2 {
   display:grid;
+  width:50%;
   
 }
 
@@ -13,7 +14,7 @@
   border: 10px solid grey;
   text-align: center;
   padding: 25px;
-  width:50%;
+  
   
 }
 
