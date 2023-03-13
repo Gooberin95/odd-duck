@@ -1,44 +1,30 @@
-.container {  display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    gap: 10px 10px;
-    grid-auto-flow: row;
-    width: 100%;
-    height:100%;
-    grid-template-areas:
-      "button1 welcome button2"
-            "pic1 pic2 pic3"
-      "button5 button3 button4";
-  }
+.container {
+  display: grid;
 
-  .welcome { 
-    grid-area: welcome; 
-    height: 55px;
-    border-color: black;
-    
-    
-    background-color: aquamarine;
+}
+
+.container-item {
+  border: 10px solid grey;
+  text-align: center;
+  padding: 25px;
+}
+
+#nav1 {
+  color: white;
+  background-color: greenyellow;
+}
+
+#nav2 {
+  color: white;
+  background-color:orange;
+}
+#nav3 {
+  color: white;
+  background-color: blue;
+}
+#nav4 {
+  color: white;
+  background-color: purple;
 }
   
 
-
-  
-
-  .pic1 { 
-    grid-area: pic1; 
-    height: 55px;
-    width:100%;
-}
-  
-  .pic2 { 
-    grid-area: pic2; 
-    height: 55px;
-    width:100%;
-}
-  
-  .pic3 { 
-    grid-area: pic3; 
-    height: 55px;
-    width:100%
-}
-  
