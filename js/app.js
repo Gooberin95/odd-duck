@@ -1,6 +1,6 @@
 let totalVotes = 5;
 
-const state = {
+let state = {
     allProductsArray: [],
 };
 
@@ -14,16 +14,15 @@ let button2 = document.getElementById('butt2');
 let button3 = document.getElementById('butt3');
 let resultsButton = document.getElementById('buttResults');
 
-class Products {
-    constructor(name, fileExt = 'jpg') {
-        this.name = name;
-        this.views = 0;
-        this.votes = 0;
-        this.photo = `img/${name}.${fileExt}`;
+function Products(name, fileExt = 'jpg') {
+    this.name = name;
+    this.views = 0;
+    this.votes = 0;
+    this.photo = `img/${name}.${fileExt}`;
 
-        state.allProductsArray.push(this);
-    }
+    state.allProductsArray.push(this);
 }
+
 
 
 let bana = new Products('banana');
@@ -47,27 +46,23 @@ let wine = new Products('wine-glass.jpg');
 
 
 
-function handleClick(event);
-voteCount --; 
-
-
-
 function randomPic() {
     return Math.floor(Math.random() * state.allProductsArray.length);
   };
+
+
+
 
 function renderPic() {
     let indexRand1 = randomPic();
     let indexRand2 = randomPic();
     let indexRand3 = randomPic();
     
-    while(indexRand1 === indexRand2 && indexRand1 === indexRand3){
 
+    while(indexRand1 === indexRand2);{
+        indexRand1 = randomPic();
 
-    indexRand3 = randomPic();
-
-}
-
+    }
     imgOne.src = state.allProductsArray[indexRand3].photo;
     imgOne.alt = state.allProductsArray[indexRand3].name;
     state.allProductsArray[indexRand3].views++
@@ -80,6 +75,7 @@ function renderPic() {
 
 }
 
-imgContainer.addEventListener('click',handleClick);
-resultsButton.addEventListener('click', handleClick);
+console.log(state);
+
+
 renderPic();
