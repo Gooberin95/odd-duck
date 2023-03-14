@@ -60,8 +60,10 @@ function renderPic() {
     let indexRand3 = randomPic();
     
 
-    while(indexRand1 === indexRand2);{
+    while(indexRand1 === indexRand2 === indexRand3 );{
         indexRand1 = randomPic();
+        indexRand2 = randomPic();
+        indexRand3 = randomPic();
 
     }
     imgOne.src = state.allProductsArray[indexRand3].photo;
