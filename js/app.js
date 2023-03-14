@@ -39,10 +39,11 @@ let pen = new Products('pen');
 let sweep = new Products('pet-sweep');
 let sciss = new Products('scissors');
 let shark = new Products('shark');
+let meep = new Products('sweep','png');
 let taunt = new Products('tauntaun');
-let uni = new Products('unicorn', "png");
+let uni = new Products('unicorn');
 let wat = new Products('water-can');
-let wine = new Products('wine-glass.jpg');
+let wine = new Products('wine-glass');
 
 
 
