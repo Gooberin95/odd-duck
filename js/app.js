@@ -78,7 +78,18 @@ function renderPic() {
 
 }
 
+
+function handleClick(event) {
+    renderPic();
+}
+
+
+
+
 console.log(state);
 
+button1.addEventListener('click', handleClick);
+button2.addEventListener('click', handleClick);
+button3.addEventListener('click', handleClick);
 
 renderPic();
