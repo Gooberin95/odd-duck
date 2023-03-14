@@ -61,19 +61,24 @@ function renderPic() {
     let indexRand2 = randomPic();
     let indexRand3 = randomPic();
     
-    while(indexRand1 === indexRand2 && indexRand1 === indexRand3);
+    while(indexRand1 === indexRand2 && indexRand1 === indexRand3){
+
+
     indexRand3 = randomPic();
+
 }
 
+    imgOne.src = state.allProductsArray[indexRand3].photo;
+    imgOne.alt = state.allProductsArray[indexRand3].name;
+    state.allProductsArray[indexRand3].views++
+    imgTwo.src = state.allProductsArray[indexRand1].photo;
+    imgTwo.alt = state.allProductsArray[indexRand1].name;
+    state.allProductsArray[indexRand1].views++
+    imgThree.src = state.allProductsArray[indexRand2].photo;
+    imgThree.alt = state.allProductsArray[indexRand2].name;
+    state.allProductsArray[indexRand2].views++
 
-imgOne.src = state.allProductsArray[indexRand3].photo;
-imgOne.alt = state.allProductsArray[indexRand3].name;
-imgTwo.src = state.allProductsArray[indexRand1].photo;
-imgTwo.alt = state.allProductsArray[indexRand1].name;
-imgThree.src = state.allProductsArray[indexRand2].photo;
-imgThree.alt = state.allProductsArray[indexRand2].name;
-
-
+}
 
 imgContainer.addEventListener('click',handleClick);
 resultsButton.addEventListener('click', handleClick);
