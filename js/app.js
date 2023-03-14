@@ -4,6 +4,8 @@ const state = {
     allProductsArray: [],
 };
 
+
+let imgContainer = document.getElementById('container');
 let imgOne = document.getElementById('photo1');
 let imgTwo = document.getElementById('photo2');
 let imgThree = document.getElementById('photo3');
@@ -54,7 +56,7 @@ function randomPic() {
     return Math.floor(Math.random() * state.allProductsArray.length);
   };
 
-function imgRender() {
+function renderPic() {
     let indexRand1 = randomPic();
     let indexRand2 = randomPic();
     let indexRand3 = randomPic();
@@ -68,8 +70,8 @@ imgOne.src = state.allProductsArray[indexRand3].photo;
 imgOne.alt = state.allProductsArray[indexRand3].name;
 imgTwo.src = state.allProductsArray[indexRand1].photo;
 imgTwo.alt = state.allProductsArray[indexRand1].name;
-imgThree.src = state.allProductsArray[indexRand2];
-imgThree.src = state.allProductsArray[indexRand2];
+imgThree.src = state.allProductsArray[indexRand2].photo;
+imgThree.alt = state.allProductsArray[indexRand2].name;
 
 
 
