@@ -92,29 +92,65 @@ function handleClick(event) {
 
 
 
-
 console.log(state);
 
 button1.addEventListener('click', handleClick);
 button2.addEventListener('click', handleClick);
 button3.addEventListener('click', handleClick);
+function renderChart() {
 
-renderPic();
-new Chart(ctx, {
-    type: 'bar',
-    data: {
-      labels: [ duck.name , bana.name , bath.name , 'anchovies', 'artichoke', 'antwerp'],
-      datasets: [{
-        label: '# of Votes',
-        data: [12, 19, 3, 5, 2, 3],
-        borderWidth: 1
-      }]
-    },
-    options: {
-      scales: {
-        y: {
-          beginAtZero: true
+  let thingNames = [];
+  let thingVotes = [];
+
+
+  for(let i=0 ; i  < state.allProductsArray.length; i ++) {
+    thingNames.push(state.allProductsArray[i].name);
+    thingVotes.push(state.allProductsArray[i].votes);
+  }
+
+
+    let inside = {
+        
+        
+        type: 'bar',
+        data: {
+          labels: thingNames,
+          datasets: [{
+            label: '# of Votes',
+            data: thingVotes,
+            borderWidth: 1
+          }]
+        },
+        options: {
+          scales: {
+            y: {
+              beginAtZero: true
+            }
+          }
         }
-      }
-    }
-  });
+      };
+
+      new Chart(ctx, inside);
+  }
+
+
+
+function handleClickDisplay(event) {
+  renderChart();
+}
+  
+
+
+
+
+
+
+
+
+
+
+
+resultsButton.addEventListener('click', handleClickDisplay);
+renderPic();
+
+
