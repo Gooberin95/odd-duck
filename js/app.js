@@ -148,11 +148,11 @@ function handleClick1(event) {
   for(let i = 0; i < state.allProductsArray.length; i++){
     if(tag == state.allProductsArray[i].name); 
       state.allProductsArray[i].votes++
-      console.log(tag, state.allProductsArray[i].votes);
+      
   
 
   }
-
+  renderPic();
   if (totalVotes === 0) {
     button3.removeEventListener('click', handleClick3)
     button2.removeEventListener('click', handleClick2)
@@ -167,14 +167,13 @@ function handleClick2(event) {
   totalVotes--;
   let tag = imgTwo.alt;
   console.log(imgTwo.alt);
-  for(let i = 0; i < state.allProductsArray.length; i++);
-    if(tag == state.allProductsArray[i].name);
+  for(let i = 0; i < state.allProductsArray.length; i++){
+    if(tag == state.allProductsArray[i].name); 
       state.allProductsArray[i].votes++
-      console.log(tag, state.allProductsArray[i].votes);
   
 
+  }
   renderPic();
-
   if (totalVotes === 0) {
     button3.removeEventListener('click', handleClick3)
     button2.removeEventListener('click', handleClick2)
@@ -183,18 +182,20 @@ function handleClick2(event) {
 
 
 };
+
 
 
 function handleClick3(event) {
   totalVotes--;
   let tag = imgThree.alt;
   console.log(imgThree.alt);
-  for(let i = 0; i < state.allProductsArray.length; i++); {
-    if(tag == state.allProductsArray[i].name);
+  for(let i = 0; i < state.allProductsArray.length; i++){
+    if(tag == state.allProductsArray[i].name); 
       state.allProductsArray[i].votes++
-      console.log(tag, state.allProductsArray[i].votes);
-    
+  
+
   }
+  renderPic();
   if (totalVotes === 0) {
     button3.removeEventListener('click', handleClick3)
     button2.removeEventListener('click', handleClick2)
@@ -203,6 +204,7 @@ function handleClick3(event) {
 
 
 };
+
 
 
 button1.addEventListener('click', handleClick1);
@@ -211,6 +213,7 @@ button3.addEventListener('click', handleClick3);
 
 
 function handleClickDisplay(event) {
+  console.log(state.allProductsArray);
   renderChart();
 }
 
@@ -230,4 +233,3 @@ renderPic();
 
 
 
-console.log(state.allProductsArray.votes);
