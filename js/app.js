@@ -1,6 +1,6 @@
 'use strict';
 
-let totalVotes = 5;
+let totalVotes = 8;
 
 
 
@@ -142,7 +142,7 @@ function handleClick1(event) {
   let imgClicked = event.target.id;
   for(let i=0; i< state.allProductsArray.length; i ++) {
     if(imgClicked === state.allProductsArray[i].name) {
-      imgClicked.state.allProductsArray[i].votes ++
+      
       console.log(imgClicked, state.allProductsArray[i].votes);
 
     }
@@ -164,7 +164,7 @@ function handleClick2(event) {
   let imgClicked = event.target;
   for(let i=0; i< state.allProductsArray.length; i ++) {
     if(imgClicked === state.allProductsArray[i].name) {
-      state.allProductsArray[i].votes ++
+      state.allProductsArray[i].votes++
       console.log(imgClicked, state.allProductsArray[i].votes);
 
     }
@@ -186,7 +186,7 @@ function handleClick3(event) {
   let imgClicked = event.target.alt;
   for(let i=0; i< state.allProductsArray.length; i ++) {
     if(imgClicked === state.allProductsArray[i].name) {
-      state.allProductsArray[i].votes ++
+      state.allProductsArray[imgClicked].votes += 1;
       console.log(imgClicked, state.allProductsArray[i].votes);
 
     }
