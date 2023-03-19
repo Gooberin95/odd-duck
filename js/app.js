@@ -8,7 +8,7 @@ const ctx = document.getElementById('myChart');
 
 
 
-
+ 
 let state = {
     allProductsArray: [],
 };
@@ -78,15 +78,15 @@ function renderPic() {
     imgOne.src = state.allProductsArray[indexRand3].photo;
     imgOne.alt = state.allProductsArray[indexRand3].name;
     state.allProductsArray[indexRand3].views++
-    // state.allProductsArray[indexRand3].votes++
+    state.allProductsArray[indexRand3].votes++
     imgTwo.src = state.allProductsArray[indexRand1].photo;
     imgTwo.alt = state.allProductsArray[indexRand1].name;
     state.allProductsArray[indexRand1].views++
-    // state.allProductsArray[indexRand1].votes++
+    state.allProductsArray[indexRand1].votes++
     imgThree.src = state.allProductsArray[indexRand2].photo;
     imgThree.alt = state.allProductsArray[indexRand2].name;
     state.allProductsArray[indexRand2].views++
-    // state.allProductsArray[indexRand2].votes++
+    state.allProductsArray[indexRand2].votes++
 
 }
 
@@ -99,6 +99,7 @@ function renderChart() {
 
   
   for(let i=0 ; i  < state.allProductsArray.length; i ++) {
+    console.log(state.allProductsArray[i].votes);
     thingNames.push(state.allProductsArray[i].name);
     thingVotes.push(state.allProductsArray[i].votes);
     thingViews.push(state.allProductsArray[i].views);
@@ -139,38 +140,43 @@ function renderChart() {
 
 function handleClick1(event) {
   totalVotes --;
-  let imgClicked = event.target.id;
-  for(let i=0; i< state.allProductsArray.length; i ++) {
+  state.allProductsArray.votes ++
+  let imgClicked = event.target.src;
+  for(let i = 0; i < state.allProductsArray.length; i ++) {
     if(imgClicked === state.allProductsArray[i].name) {
+      state.allProductsArray[imgClicked].votes ++
+      console.log(state.allProductsArray[i].votes);
       
-      console.log(imgClicked, state.allProductsArray[i].votes);
+      
 
     }
   }
 
   renderPic();
+  
   if(totalVotes === 0) {
     button3.removeEventListener('click', handleClick3)
     button2.removeEventListener('click', handleClick2)
     button1.removeEventListener('click', handleClick1)
   }
   
-  console.log(totalVotes);
+  
 };
 
 
 function handleClick2(event) {
   totalVotes --;
-  let imgClicked = event.target;
-  for(let i=0; i< state.allProductsArray.length; i ++) {
+  let imgClicked = event.target.alt;
+  for(let i = 0; i < state.allProductsArray.length; i ++) {
     if(imgClicked === state.allProductsArray[i].name) {
-      state.allProductsArray[i].votes++
-      console.log(imgClicked, state.allProductsArray[i].votes);
+      state.allProductsArray[i].votes ++
+      console.log(state.allProductsArray.votes);
 
     }
   }
 
   renderPic();
+  console.log(state.allProductsArray.votes);
   if(totalVotes === 0) {
     button3.removeEventListener('click', handleClick3)
     button2.removeEventListener('click', handleClick2)
@@ -178,16 +184,16 @@ function handleClick2(event) {
   }
   
   
-  console.log(state.allProductsArray.votes);
+  
 };
 
 function handleClick3(event) {
   totalVotes --;
   let imgClicked = event.target.alt;
-  for(let i=0; i< state.allProductsArray.length; i ++) {
+  for(let i = 0; i < state.allProductsArray.length; i ++) {
     if(imgClicked === state.allProductsArray[i].name) {
-      state.allProductsArray[imgClicked].votes += 1;
-      console.log(imgClicked, state.allProductsArray[i].votes);
+      state.allProductsArray[i].votes ++
+      console.log(state.allProductsArray[i].votes);
 
     }
   }
@@ -199,10 +205,7 @@ function handleClick3(event) {
     button1.removeEventListener('click', handleClick1);
   }
   
-  
-  console.log(totalVotes);
 };
-console.log(state);
 
 button1.addEventListener('click', handleClick1);
 button2.addEventListener('click', handleClick2);
@@ -228,3 +231,5 @@ resultsButton.addEventListener('click', handleClickDisplay);
 renderPic();
 
 
+
+console.log(state.allProductsArray.votes);
