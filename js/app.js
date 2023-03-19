@@ -146,11 +146,9 @@ function handleClick1(event) {
   let tag = imgOne.alt;
   console.log(imgOne.alt);
   for(let i = 0; i < state.allProductsArray.length; i++){
-    if(tag == state.allProductsArray[i].name); 
+    if(tag === state.allProductsArray[i].name){
       state.allProductsArray[i].votes++
-      
-  
-
+    }
   }
   renderPic();
   if (totalVotes === 0) {
@@ -168,10 +166,10 @@ function handleClick2(event) {
   let tag = imgTwo.alt;
   console.log(imgTwo.alt);
   for(let i = 0; i < state.allProductsArray.length; i++){
-    if(tag == state.allProductsArray[i].name); 
+    if(tag === state.allProductsArray[i].name){
       state.allProductsArray[i].votes++
   
-
+    }
   }
   renderPic();
   if (totalVotes === 0) {
@@ -190,10 +188,10 @@ function handleClick3(event) {
   let tag = imgThree.alt;
   console.log(imgThree.alt);
   for(let i = 0; i < state.allProductsArray.length; i++){
-    if(tag == state.allProductsArray[i].name); 
-      state.allProductsArray[i].votes++
+    if(tag === state.allProductsArray[i].name){
+      state.allProductsArray[tag].votes++
   
-
+    }
   }
   renderPic();
   if (totalVotes === 0) {
