@@ -78,14 +78,17 @@ function renderPic() {
   imgOne.src = state.allProductsArray[indexRand3].photo;
   imgOne.alt = state.allProductsArray[indexRand3].name;
   state.allProductsArray[indexRand3].views++
+  
 
   imgTwo.src = state.allProductsArray[indexRand1].photo;
   imgTwo.alt = state.allProductsArray[indexRand1].name;
   state.allProductsArray[indexRand1].views++
+  
 
   imgThree.src = state.allProductsArray[indexRand2].photo;
   imgThree.alt = state.allProductsArray[indexRand2].name;
   state.allProductsArray[indexRand2].views++
+  
 
 
 }
@@ -99,7 +102,7 @@ function renderChart() {
 
 
   for (let i = 0; i < state.allProductsArray.length; i++) {
-    console.log(state.allProductsArray[i].votes);
+    
     thingNames.push(state.allProductsArray[i].name);
     thingVotes.push(state.allProductsArray[i].votes);
     thingViews.push(state.allProductsArray[i].views);
@@ -140,17 +143,12 @@ function renderChart() {
 
 function handleClick1(event) {
   totalVotes--;
-  let imgClicked = event.target.alt;
-  if (imgClicked === imgOne.alt) {
-    state.allProductsArray[imgOne.alt].votes++;
-    console.log(state.allProductsArray.votes);
-  } else if (imgClicked === imgTwo.alt) {
-    state.allProductsArray[imgOne.src].votes++;
-  }
-    else if (imgClicked === imgThree.alt) {
-    state.allProductsArray[imgOne.src].votes++;
-    }
+  let tag = event.alt
+  for(let i = 0; i < state.allProductsArray.length; i ++){
+   if(imgOne.alt === tag);
 
+    state.allProductsArray[i].votes++
+  }
   renderPic();
 
   if (totalVotes === 0) {
@@ -165,17 +163,13 @@ function handleClick1(event) {
 
 function handleClick2(event) {
   totalVotes--;
-  let imgClicked = event.target.alt;
-  if (imgClicked === imgOne.alt) {
-    state.allProductsArray[imgOne.alt].votes++;
-    console.log(state.allProductsArray.votes);
-  } else if (imgClicked === imgTwo.alt) {
-    state.allProductsArray[imgOne.src].votes++;
-  }
-    else if (imgClicked === imgThree.alt) {
-    state.allProductsArray[imgOne.src].votes++;
-    }
+  
+  let tag = event.alt
+  for(let i = 0; i < state.allProductsArray.length; i ++){
+   if(imgOne.alt === tag);
 
+    state.allProductsArray[i].votes++
+  }
   renderPic();
 
   if (totalVotes === 0) {
@@ -190,19 +184,13 @@ function handleClick2(event) {
 
 function handleClick3(event) {
   totalVotes--;
-  let imgClicked = event.target.alt;
-  if (imgClicked === imgOne.alt) {
-    state.allProductsArray[imgOne.alt].votes++;
-    console.log(state.allProductsArray.votes);
-  } else if (imgClicked === imgTwo.alt) {
-    state.allProductsArray[imgOne.src].votes++;
+  let tag = event.alt
+  for(let i = 0; i < state.allProductsArray.length; i ++){
+   if(imgOne.alt === tag);
+
+    state.allProductsArray[i].votes++
   }
-    else if (imgClicked === imgThree.alt) {
-    state.allProductsArray[imgOne.src].votes++;
-    }
-
   renderPic();
-
   if (totalVotes === 0) {
     button3.removeEventListener('click', handleClick3)
     button2.removeEventListener('click', handleClick2)
@@ -236,3 +224,4 @@ renderPic();
 
 
 
+console.log(state.allProductsArray.votes);
