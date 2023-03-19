@@ -78,12 +78,15 @@ function renderPic() {
     imgOne.src = state.allProductsArray[indexRand3].photo;
     imgOne.alt = state.allProductsArray[indexRand3].name;
     state.allProductsArray[indexRand3].views++
+    state.allProductsArray[indexRand3].votes++
     imgTwo.src = state.allProductsArray[indexRand1].photo;
     imgTwo.alt = state.allProductsArray[indexRand1].name;
     state.allProductsArray[indexRand1].views++
+    state.allProductsArray[indexRand1].votes++
     imgThree.src = state.allProductsArray[indexRand2].photo;
     imgThree.alt = state.allProductsArray[indexRand2].name;
     state.allProductsArray[indexRand2].views++
+    state.allProductsArray[indexRand2].votes++
 
 }
 
