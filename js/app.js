@@ -143,8 +143,8 @@ function renderChart() {
 
 function handleClick1(event) {
   totalVotes--;
-  let tag = imgOne.src;
-  console.log(imgOne.src);
+  let tag = imgOne.alt;
+  console.log(imgOne.alt);
   state.allProductsArray[tag].votes ++ 
   renderPic();
 
@@ -160,8 +160,8 @@ function handleClick1(event) {
 
 function handleClick2(event) {
   totalVotes--;
-  let tag = imgTwo.src;
-  console.log(imgTwo.src);
+  let tag = imgTwo.alt;
+  console.log(imgTwo.alt);
   state.allProductsArray[tag].votes ++ 
   
   renderPic();
@@ -178,8 +178,8 @@ function handleClick2(event) {
 
 function handleClick3(event) {
   totalVotes--;
-  let tag = imgThree.src;
-  console.log(imgThree.src);
+  let tag = imgThree.alt;
+  console.log(imgThree.alt);
   state.allProductsArray[tag].votes ++ 
   if (totalVotes === 0) {
     button3.removeEventListener('click', handleClick3)
