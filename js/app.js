@@ -78,30 +78,18 @@ function renderPic() {
     imgOne.src = state.allProductsArray[indexRand3].photo;
     imgOne.alt = state.allProductsArray[indexRand3].name;
     state.allProductsArray[indexRand3].views++
-    state.allProductsArray[indexRand3].votes++
+    // state.allProductsArray[indexRand3].votes++
     imgTwo.src = state.allProductsArray[indexRand1].photo;
     imgTwo.alt = state.allProductsArray[indexRand1].name;
     state.allProductsArray[indexRand1].views++
-    state.allProductsArray[indexRand1].votes++
+    // state.allProductsArray[indexRand1].votes++
     imgThree.src = state.allProductsArray[indexRand2].photo;
     imgThree.alt = state.allProductsArray[indexRand2].name;
     state.allProductsArray[indexRand2].views++
-    state.allProductsArray[indexRand2].votes++
+    // state.allProductsArray[indexRand2].votes++
 
 }
 
-
-function handleClick(event) {
-    renderPic();
-}
-
-
-
-console.log(state);
-
-button1.addEventListener('click', handleClick);
-button2.addEventListener('click', handleClick);
-button3.addEventListener('click', handleClick);
 function renderChart() {
 
   let thingNames = [];
@@ -148,6 +136,77 @@ function renderChart() {
       new Chart(ctx, inside);
   }
 
+
+function handleClick1(event) {
+  totalVotes --;
+  let imgClicked = event.target.id;
+  for(let i=0; i< state.allProductsArray.length; i ++) {
+    if(imgClicked === state.allProductsArray[i].name) {
+      imgClicked.state.allProductsArray[i].votes ++
+      console.log(imgClicked, state.allProductsArray[i].votes);
+
+    }
+  }
+
+  renderPic();
+  if(totalVotes === 0) {
+    button3.removeEventListener('click', handleClick3)
+    button2.removeEventListener('click', handleClick2)
+    button1.removeEventListener('click', handleClick1)
+  }
+  
+  console.log(totalVotes);
+};
+
+
+function handleClick2(event) {
+  totalVotes --;
+  let imgClicked = event.target;
+  for(let i=0; i< state.allProductsArray.length; i ++) {
+    if(imgClicked === state.allProductsArray[i].name) {
+      state.allProductsArray[i].votes ++
+      console.log(imgClicked, state.allProductsArray[i].votes);
+
+    }
+  }
+
+  renderPic();
+  if(totalVotes === 0) {
+    button3.removeEventListener('click', handleClick3)
+    button2.removeEventListener('click', handleClick2)
+    button1.removeEventListener('click', handleClick1)
+  }
+  
+  
+  console.log(state.allProductsArray.votes);
+};
+
+function handleClick3(event) {
+  totalVotes --;
+  let imgClicked = event.target.alt;
+  for(let i=0; i< state.allProductsArray.length; i ++) {
+    if(imgClicked === state.allProductsArray[i].name) {
+      state.allProductsArray[i].votes ++
+      console.log(imgClicked, state.allProductsArray[i].votes);
+
+    }
+  }
+
+  renderPic();
+  if(totalVotes === 0) {
+    button3.removeEventListener('click', handleClick3)
+    button2.removeEventListener('click', handleClick2)
+    button1.removeEventListener('click', handleClick1);
+  }
+  
+  
+  console.log(totalVotes);
+};
+console.log(state);
+
+button1.addEventListener('click', handleClick1);
+button2.addEventListener('click', handleClick2);
+button3.addEventListener('click', handleClick3);
 
 
 function handleClickDisplay(event) {
