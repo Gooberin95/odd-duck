@@ -143,12 +143,7 @@ function renderChart() {
 
 function handleClick1(event) {
   totalVotes--;
-  let tag = event.alt
-  for(let i = 0; i < state.allProductsArray.length; i ++){
-   if(imgOne.alt === tag);
-
-    state.allProductsArray[i].votes++
-  }
+  console.log(imgOne.src);
   renderPic();
 
   if (totalVotes === 0) {
@@ -164,12 +159,9 @@ function handleClick1(event) {
 function handleClick2(event) {
   totalVotes--;
   
-  let tag = event.alt
-  for(let i = 0; i < state.allProductsArray.length; i ++){
-   if(imgOne.alt === tag);
+  console.log(imgTwo.src);
 
-    state.allProductsArray[i].votes++
-  }
+  
   renderPic();
 
   if (totalVotes === 0) {
@@ -184,13 +176,7 @@ function handleClick2(event) {
 
 function handleClick3(event) {
   totalVotes--;
-  let tag = event.alt
-  for(let i = 0; i < state.allProductsArray.length; i ++){
-   if(imgOne.alt === tag);
-
-    state.allProductsArray[i].votes++
-  }
-  renderPic();
+  console.log(imgThree.src);
   if (totalVotes === 0) {
     button3.removeEventListener('click', handleClick3)
     button2.removeEventListener('click', handleClick2)
