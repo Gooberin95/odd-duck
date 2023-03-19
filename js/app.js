@@ -189,7 +189,7 @@ function handleClick3(event) {
   console.log(imgThree.alt);
   for(let i = 0; i < state.allProductsArray.length; i++){
     if(tag === state.allProductsArray[i].name){
-      state.allProductsArray[tag].votes++
+      state.allProductsArray[i].votes++
   
     }
   }
