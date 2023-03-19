@@ -1,3 +1,5 @@
+'use strict';
+
 let totalVotes = 5;
 
 
@@ -101,11 +103,15 @@ function renderChart() {
 
   let thingNames = [];
   let thingVotes = [];
+  let thingViews = [];
 
 
+  
   for(let i=0 ; i  < state.allProductsArray.length; i ++) {
     thingNames.push(state.allProductsArray[i].name);
     thingVotes.push(state.allProductsArray[i].votes);
+    thingViews.push(state.allProductsArray[i].views);
+
   }
 
 
@@ -116,10 +122,16 @@ function renderChart() {
         data: {
           labels: thingNames,
           datasets: [{
-            label: '# of Votes',
-            data: thingVotes,
+            label: '# of Views',
+            data: thingViews,
             borderWidth: 1
-          }]
+          },{ 
+            label: '# of Votes',
+          data: thingVotes,
+          borderWidth: 1
+
+          }
+        ] 
         },
         options: {
           scales: {
