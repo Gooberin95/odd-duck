@@ -98,7 +98,12 @@ function renderChart() {
   let thingNames = [];
   let thingVotes = [];
   let thingViews = [];
+  
+  console.log(thingVotes);
+  
+  
 
+  
 
 
   for (let i = 0; i < state.allProductsArray.length; i++) {
@@ -211,7 +216,7 @@ button3.addEventListener('click', handleClick3);
 
 
 function handleClickDisplay(event) {
-  console.log(state.allProductsArray);
+  
   renderChart();
 }
 
@@ -229,5 +234,9 @@ function handleClickDisplay(event) {
 resultsButton.addEventListener('click', handleClickDisplay);
 renderPic();
 
+
+
+let stringifiedSnorlax = JSON.stringify(state.allProductsArray);
+localStorage.setItem('bigCahuna', stringifiedSnorlax);
 
 
