@@ -30,12 +30,12 @@ function Products(name, fileExt = 'jpg') {
   this.photo = `img/${name}.${fileExt}`;
 
   state.allProductsArray.push(this);
-  let stringy = JSON.getItem('products');
-  let pair = JSON.parse(stringy);
+  // let stringy = JSON.getItem('products');
+  // let pair = JSON.parse(stringy);
+
+
   
-
 }
-
 
 
 let bana = new Products('banana');
@@ -57,7 +57,7 @@ let taunt = new Products('tauntaun');
 let uni = new Products('unicorn');
 let wat = new Products('water-can');
 let wine = new Products('wine-glass');
-
+  
 
 
 function randomPic() {
@@ -215,6 +215,9 @@ function handleClick3(event) {
     button3.removeEventListener('click', handleClick3)
     button2.removeEventListener('click', handleClick2)
     button1.removeEventListener('click', handleClick1)
+
+    let Optum = JSON.stringify(state.allProductsArray);
+    localStorage.setItem('prawns', Optum);
   }
 
 
