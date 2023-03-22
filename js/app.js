@@ -41,31 +41,31 @@ let obstacle = JSON.parse(obst);
 
 if(obst) {
   state.allProductsArray = obstacle;
-  
+
+} else {
+
+
+  let bana = new Products('banana');
+  let bag = new Products('bag');
+  let bath = new Products('bathroom');
+  let boot = new Products('boots');
+  let breakf = new Products('breakfast');
+  let bubb = new Products('bubblegum');
+  let chair = new Products('chair');
+  let thulu = new Products('cthulhu');
+  let duck = new Products('dog-duck');
+  let drag = new Products('dragon');
+  let pen = new Products('pen');
+  let sweep = new Products('pet-sweep');
+  let sciss = new Products('scissors');
+  let shark = new Products('shark');
+  let meep = new Products('sweep', 'png');
+  let taunt = new Products('tauntaun');
+  let uni = new Products('unicorn');
+  let wat = new Products('water-can');
+  let wine = new Products('wine-glass');
+    
 }
-
-
-let bana = new Products('banana');
-let bag = new Products('bag');
-let bath = new Products('bathroom');
-let boot = new Products('boots');
-let breakf = new Products('breakfast');
-let bubb = new Products('bubblegum');
-let chair = new Products('chair');
-let thulu = new Products('cthulhu');
-let duck = new Products('dog-duck');
-let drag = new Products('dragon');
-let pen = new Products('pen');
-let sweep = new Products('pet-sweep');
-let sciss = new Products('scissors');
-let shark = new Products('shark');
-let meep = new Products('sweep', 'png');
-let taunt = new Products('tauntaun');
-let uni = new Products('unicorn');
-let wat = new Products('water-can');
-let wine = new Products('wine-glass');
-  
-
 
 function randomPic() {
   return Math.floor(Math.random() * state.allProductsArray.length);
@@ -133,7 +133,7 @@ function renderChart() {
   
 
   let Optum = JSON.stringify(state.allProductsArray);
-  localStorage.setItem('prawns', Optum);
+  localStorage.setItem('prawns', Optum)
   let inside = {
 
 
