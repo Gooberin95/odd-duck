@@ -1,6 +1,6 @@
 'use strict';
 
-let totalVotes = 4;
+let totalVotes = 10;
 
 
 
@@ -69,12 +69,17 @@ function renderPic() {
   let indexRand3 = randomPic();
 
 
-  while (indexRand1 === indexRand2 === indexRand3); {
-    indexRand1 = randomPic();
+  while (indexRand1 === indexRand2) {
+    indexRand1 = randomPic(); 
+  }
+  while (indexRand2 === indexRand3) {
     indexRand2 = randomPic();
+  }
+  while (indexRand3 === indexRand1) {
     indexRand3 = randomPic();
 
   }
+
   imgOne.src = state.allProductsArray[indexRand3].photo;
   imgOne.alt = state.allProductsArray[indexRand3].name;
   state.allProductsArray[indexRand3].views++
