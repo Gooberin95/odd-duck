@@ -109,8 +109,7 @@ function renderChart() {
   
 
   
-  let stringifiedSnorlax = JSON.stringify(state.allProductsArray);
-  localStorage.setItem('bigData', stringifiedSnorlax);
+
   
   for (let i = 0; i < state.allProductsArray.length; i++) {
 
@@ -120,7 +119,10 @@ function renderChart() {
 
   }
 
-
+  
+  let stringifiedSnorlax = JSON.stringify(state.allProductsArray);
+  localStorage.setItem('bigBuilding', stringifiedSnorlax);
+  
   let inside = {
 
 
