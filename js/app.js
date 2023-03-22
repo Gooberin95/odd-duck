@@ -30,6 +30,10 @@ function Products(name, fileExt = 'jpg') {
   this.photo = `img/${name}.${fileExt}`;
 
   state.allProductsArray.push(this);
+  let stringy = JSON.getItem('products');
+  let pair = JSON.parse(stringy);
+  
+
 }
 
 
@@ -99,7 +103,7 @@ function renderPic() {
 }
 
 function renderChart() {
-
+  
   let thingNames = [];
   let thingVotes = [];
   let thingViews = [];
@@ -120,9 +124,8 @@ function renderChart() {
   }
 
   
-  let stringifiedSnorlax = JSON.stringify(state.allProductsArray);
-  localStorage.setItem('bigBuilding', stringifiedSnorlax);
-  
+
+
   let inside = {
 
 
@@ -155,6 +158,7 @@ function renderChart() {
 
 
 function handleClick1(event) {
+  
   totalVotes--;
   let tag = imgOne.alt;
   console.log(imgOne.alt);
