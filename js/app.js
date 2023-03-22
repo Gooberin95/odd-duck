@@ -1,6 +1,6 @@
 'use strict';
 
-let totalVotes = 10;
+let totalVotes = 2;
 
 
 
@@ -109,8 +109,9 @@ function renderChart() {
   
 
   
-
-
+  let stringifiedSnorlax = JSON.stringify(state.allProductsArray);
+  localStorage.setItem('bigData', stringifiedSnorlax);
+  
   for (let i = 0; i < state.allProductsArray.length; i++) {
 
     thingNames.push(state.allProductsArray[i].name);
@@ -241,7 +242,6 @@ renderPic();
 
 
 
-let stringifiedSnorlax = JSON.stringify(state.allProductsArray);
-localStorage.setItem('bigCahuna', stringifiedSnorlax);
+
 
 
