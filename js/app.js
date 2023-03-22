@@ -30,10 +30,17 @@ function Products(name, fileExt = 'jpg') {
   this.photo = `img/${name}.${fileExt}`;
 
   state.allProductsArray.push(this);
-  // let stringy = JSON.getItem('products');
-  // let pair = JSON.parse(stringy);
+  
 
 
+  
+}
+
+let obst = localStorage.getItem('prawns');
+let obstacle = JSON.parse(obst);
+
+if(obst) {
+  state.allProductsArray = obstacle;
   
 }
 
@@ -125,7 +132,8 @@ function renderChart() {
 
   
 
-
+  let Optum = JSON.stringify(state.allProductsArray);
+  localStorage.setItem('prawns', Optum);
   let inside = {
 
 
@@ -172,6 +180,7 @@ function handleClick1(event) {
     button3.removeEventListener('click', handleClick3)
     button2.removeEventListener('click', handleClick2)
     button1.removeEventListener('click', handleClick1)
+  
   }
 
 
@@ -193,6 +202,8 @@ function handleClick2(event) {
     button3.removeEventListener('click', handleClick3)
     button2.removeEventListener('click', handleClick2)
     button1.removeEventListener('click', handleClick1)
+    let Optum = JSON.stringify(state.allProductsArray);
+    localStorage.setItem('prawns', Optum);
   }
 
 
