@@ -1,6 +1,6 @@
 'use strict';
 
-let totalVotes = 2;
+let totalVotes = 30;
 
 
 
