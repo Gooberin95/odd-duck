@@ -1,19 +1,19 @@
 'use strict';
-
+//setting a cap on amount of times user can vote
 let totalVotes = 30;
 
 
-
+// grabbing element by id to manipulate and give data
 const ctx = document.getElementById('myChart');
 
 
 
-
+//state object to have a reference and keep track of the changes that have occured in the application
 let state = {
   allProductsArray: [],
 };
 
-
+//grabbing each html div and img container we intend to render and manipulate with javascript
 let imgContainer = document.getElementById('container');
 let imgOne = document.getElementById('photo1');
 let imgTwo = document.getElementById('photo2');
@@ -22,7 +22,7 @@ let button1 = document.getElementById('butt1');
 let button2 = document.getElementById('butt2');
 let button3 = document.getElementById('butt3');
 let resultsButton = document.getElementById('buttResults');
-
+//constructor function to manipulate data
 function Products(name, fileExt = 'jpg') {
   this.name = name;
   this.views = 0;
@@ -35,7 +35,7 @@ function Products(name, fileExt = 'jpg') {
 
   
 }
-
+//implementation of local storage object
 let obst = localStorage.getItem('prawns');
 let obstacle = JSON.parse(obst);
 
@@ -44,7 +44,7 @@ if(obst) {
 
 } else {
 
-
+  //instances of our Products object for each product we desire to use
   let bana = new Products('banana');
   let bag = new Products('bag');
   let bath = new Products('bathroom');
@@ -66,14 +66,14 @@ if(obst) {
   let wine = new Products('wine-glass');
     
 }
-
+//random number/index generator
 function randomPic() {
   return Math.floor(Math.random() * state.allProductsArray.length);
 };
 
 
 
-
+//rendering our pictures and ensuring they do not repeat the same picture 2 times in each round
 function renderPic() {
   let indexRand1 = randomPic();
   let indexRand2 = randomPic();
@@ -90,7 +90,7 @@ function renderPic() {
     indexRand3 = randomPic();
 
   }
-
+  //appending view counts to out state object
   imgOne.src = state.allProductsArray[indexRand3].photo;
   imgOne.alt = state.allProductsArray[indexRand3].name;
   state.allProductsArray[indexRand3].views++
@@ -108,7 +108,7 @@ function renderPic() {
 
 
 }
-
+//utilizing our chart object through our cdn link
 function renderChart() {
   
   let thingNames = [];
@@ -121,7 +121,7 @@ function renderChart() {
 
   
 
-  
+  //looping over our state object to pull/push data to include into chart
   for (let i = 0; i < state.allProductsArray.length; i++) {
 
     thingNames.push(state.allProductsArray[i].name);
@@ -131,9 +131,10 @@ function renderChart() {
   }
 
   
-
+  //turning our data into json and setting into local storage
   let Optum = JSON.stringify(state.allProductsArray);
   localStorage.setItem('prawns', Optum)
+  //our chart object
   let inside = {
 
 
@@ -164,7 +165,7 @@ function renderChart() {
   new Chart(ctx, inside);
 }
 
-
+//handleclick function with events we want to happend if fired
 function handleClick1(event) {
   
   totalVotes--;
@@ -186,7 +187,7 @@ function handleClick1(event) {
 
 };
 
-
+//handleclick function with events we want to happend if fired
 function handleClick2(event) {
   totalVotes--;
   let tag = imgTwo.alt;
@@ -210,7 +211,7 @@ function handleClick2(event) {
 };
 
 
-
+//handleclick function with events we want to happend if fired
 function handleClick3(event) {
   totalVotes--;
   let tag = imgThree.alt;
@@ -235,12 +236,12 @@ function handleClick3(event) {
 };
 
 
-
+//attaching event listeners to our buttons
 button1.addEventListener('click', handleClick1);
 button2.addEventListener('click', handleClick2);
 button3.addEventListener('click', handleClick3);
 
-
+//function to hold our render chart 
 function handleClickDisplay(event) {
   
   renderChart();
@@ -256,7 +257,7 @@ function handleClickDisplay(event) {
 
 
 
-
+//attaching event listener to our button
 resultsButton.addEventListener('click', handleClickDisplay);
 renderPic();
 
